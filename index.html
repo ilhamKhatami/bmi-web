@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/styles.css">
+        <title>Kalkulator BMI</title>
+    </head>
+    <body>
+        <header>
+            <nav class="flex">
+                <div class="brand">
+                    <h2>RAWRRR</h2>
+                </div>
+                <ul class="menu flex">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#kalkulator">Kalkulator</a></li>
+                    <li><a href="#author">Author</a></li>
+                </ul>
+                <button class="nav-toggle">&#9776;</button>
+                <div class="mobileNav hidden">
+                    <ul class="flex">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#kalkulator">Kalkulator</a></li>
+                        <li><a href="#author">Author</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div id="content">
+                <article class="flex" id="home">
+                    <div class="welcome-section">
+                        <h1>Kalkulator Bmi</h1>
+                        <p>Hitung Body Mass Index (BMI) kamu disini</p>
+                        <a class="button" href="#kalkulator">Get Started</a>
+                    </div>
+                </article>
+
+                <div class="card-container">
+                    <div id="kalkulator">
+                        <div class="flex flex-center">
+                            <div class="displayBox kalkulator-form card">
+                                <section class="text-center">
+                                    <h2>KALKULATOR BMI</h2>
+                                    <hr>
+                                </section>
+                                <section>
+                                    <form action="" method="post" id="form">
+                                        <div class="img-radio text-center">
+                                            <label>
+                                                <input onchange="displayImg('Laki-laki')" type="radio" name="jenis-kelamin" value="Laki-laki" required>
+                                                <img src="assets/img/man.png" alt="img Pria">
+                                            </label>
+                                            <label>
+                                                <input onchange="displayImg('Perempuan')" type="radio" name="jenis-kelamin" value="Perempuan" required>
+                                                <img src="assets/img/woman.png" alt="img Perempuan">
+                                            </label>
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="nama">Nama :</label>
+                                            <input type="text" name="nama" id="nama" required>
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="tinggi-badan">Tinggi Badan :</label>
+                                            <input type="number" name="tinggi-badan" id="tinggiBadan" required>
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="berat-badan">Berat Badan :</label>
+                                            <input type="number" name="berat-badan" id="beratBadan" required>
+                                        </div>
+                                        <div class="form-submit text-center">
+                                            <button id="button" class="button" type="submit">Hitung</button>
+                                        </div>
+                                    </form>
+                                </section>
+                            </div>
+                            <div class="displayBox kalkulator-result card hidden">
+                                <section>
+                                    <div class="img-user text-center">
+                                        <img id="Laki-laki" src="assets/img/man.webp" alt="img man">
+                                        <img id="Perempuan" src="assets/img/woman.webp" alt="img woman">
+                                    </div>
+                                    <div class="text-center card-body">
+                                        <h3>BMI untuk <span class="jenis-kelamin">Laki-laki</span></h3>
+                                        <h1 class="displayStatus">Kekurangan berat</h1>
+                                        <div class="flex section-user">
+                                            <p>Tinggi (cm) :<span class="tinggi-badan"></span></p>
+                                            <p>Berat (kg) :<span class="berat-badan"></span></p>
+                                        </div>
+                                        <!-- <p>Utamakan hidup sehat dan perhatikan konsumsi harian serta vitamin</p> -->
+                                        <button class="button reset" type="reset">Cek Ulang</button>
+                                    </div>
+                                    <div class="card-body ">
+                                        <h4>BMI kamu : <span class="displayBmi">21, Kelebihan berat</span></h4>
+                                        <p class="displayMotivasi">
+                                            Utamakan hidup sehat dan perhatikan konsumsi harian serta vitamin
+                                        </p>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <aside id="author">
+                        <div class="flex flex-center">
+                            <div class="flex card author-box">
+                                <section class="text-center">
+                                    <img src="assets/img/profile.png" alt="author foto">
+                                    <h2 class="rainbow-text">Ilham Noor Khatami</h2>
+                                    <hr>
+                                </section>
+                                <section>
+                                    <p>Hai nama saya Ilham noor khatami. Saya seorang pelajar web developer di dicoding.</p>
+                                </section>
+                                <section>
+                                    <p>Social-media :</p>
+                                    <div class="flex social-media">
+                                        <a href="">Github</a>
+                                        <a href="">Facebook</a>
+                                        <a href="">Twitter</a>
+                                        <a href="">Email</a>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <hr>
+            <p>&COPY; Copyleft - created by ilham</p>
+        </footer>
+        <script>
+            function displayImg(imgId) {
+                gender.innerHTML = imgId;
+                document.querySelector("#Laki-laki").style.display = 'none';
+                document.querySelector("#Perempuan").style.display = 'none';
+                document.querySelector("#"+imgId).style.display = 'inline';
+            }
+        </script>
+        <script src="./assets/js/kalkulator.js"></script>
+    </body>
+</html>
